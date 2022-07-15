@@ -152,7 +152,7 @@ showStream pxy ts =
   case NE.nonEmpty ts of
     Nothing -> "<EMPTY>"
     Just ne ->
-      let (h, r) = splitAt 40 (showTokens pxy ne)
+      let (h, r) = splitAt 400 (showTokens pxy ne)
        in if null r then h else h ++ " <…>"
 
 -- | Calculate number of consumed tokens given 'State' of parser before and
