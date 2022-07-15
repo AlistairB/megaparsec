@@ -70,7 +70,7 @@ dbg ::
   ParsecT e s m a
 dbg lbl p = ParsecT $ \s cok cerr eok eerr ->
   let l = dbgLog lbl :: DbgItem s e a -> String
-      unfold = streamTake 40
+      unfold = streamTake 400
       cok' x s' hs =
         flip trace (cok x s' hs) $
           l (DbgIn (unfold (stateInput s)))
